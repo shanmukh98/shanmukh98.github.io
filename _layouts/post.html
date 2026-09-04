@@ -5,8 +5,11 @@ layout: default
 <article class="lf-article">
   <div class="lf-article__layout" data-lineframe-article>
     <header class="lf-article__header">
-      <a class="lf-section__label article-back-link" href="{{ site.baseurl }}/">All writing</a>
-      <div class="article-heading">
+      <div class="lf-article__heading">
+        <a class="lf-back-link article-back-link" href="{{ site.baseurl }}/">
+          <span class="lf-back-link__icon" aria-hidden="true">&larr;</span>
+          <span>All writing</span>
+        </a>
         <p class="lf-kicker">Field notes</p>
         <h1 class="lf-article__title">{{ page.title }}</h1>
         {% if page.description %}
