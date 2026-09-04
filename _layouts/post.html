@@ -3,32 +3,30 @@ layout: default
 ---
 
 <article class="lf-article">
-  <header class="lf-article__header">
-    <div>
+  <div class="lf-article__layout" data-lineframe-article>
+    <header class="lf-article__header">
       <a class="lf-section__label article-back-link" href="{{ site.baseurl }}/">All writing</a>
-    </div>
-    <div>
-      <p class="lf-kicker">Field notes</p>
-      <h1 class="lf-article__title">{{ page.title }}</h1>
-      {% if page.description %}
-        <p class="lf-article__description">{{ page.description }}</p>
-      {% endif %}
-      <div class="lf-meta">
-        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
-        <span>{{ site.name }}</span>
-      </div>
-      {% if page.tags %}
-        <div class="article-tags">
-          {% for tag in page.tags %}
-            <span class="lf-tag">{{ tag }}</span>
-          {% endfor %}
+      <div class="article-heading">
+        <p class="lf-kicker">Field notes</p>
+        <h1 class="lf-article__title">{{ page.title }}</h1>
+        {% if page.description %}
+          <p class="lf-article__description">{{ page.description }}</p>
+        {% endif %}
+        <div class="lf-meta">
+          <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+          <span>{{ site.name }}</span>
         </div>
-      {% endif %}
-    </div>
-  </header>
+        {% if page.tags %}
+          <div class="article-tags">
+            {% for tag in page.tags %}
+              <span class="lf-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </header>
 
-  <div class="lf-article__body">
-    <div class="lf-article__content lf-article__content--single" data-lineframe-article>
+    <aside class="lf-article__rail">
       <nav class="lf-toc" data-lineframe-toc aria-label="On this page" hidden>
         <p class="lf-toc__title">On this page</p>
         <button class="lf-toc__toggle" type="button" aria-expanded="false">
@@ -37,6 +35,9 @@ layout: default
         </button>
         <ol class="lf-toc__list" data-lineframe-toc-list></ol>
       </nav>
+    </aside>
+
+    <div class="lf-article__body">
       <div class="lf-prose" data-lineframe-prose>
         {{ content }}
       </div>

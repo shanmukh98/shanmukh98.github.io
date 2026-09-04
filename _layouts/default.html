@@ -1,11 +1,12 @@
 <!doctype html>
-<html lang="en" data-theme="{{ site.theme_mode | default: 'light' }}">
+<html lang="en">
   <head>
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.name }}</title>
 
     {% include meta.html %}
-    <meta name="theme-color" content="#f4f3ee">
+    <meta name="theme-color" content="#f4f3ee" data-lineframe-theme-color>
     <link rel="icon" href="{{ site.baseurl }}/favicon.svg" type="image/svg+xml">
+    <script src="{{ site.lineframe_theme_js }}"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -32,17 +33,23 @@
           <span class="lf-brand__mark" aria-hidden="true"></span>
           {{ site.name }}
         </a>
-        <nav class="lf-nav" aria-label="Primary navigation">
-          <a
-            href="{{ site.baseurl }}/"
-            {% if page.url == '/' or page.layout == 'post' %}aria-current="page"{% endif %}
-          >Writing</a>
-          <a
-            href="{{ site.baseurl }}/about/"
-            {% if page.url == '/about/' %}aria-current="page"{% endif %}
-          >About</a>
-          <a class="lf-nav__optional" href="{{ site.github_url }}">GitHub</a>
-        </nav>
+        <div class="lf-header__actions">
+          <nav class="lf-nav" aria-label="Primary navigation">
+            <a
+              href="{{ site.baseurl }}/"
+              {% if page.url == '/' or page.layout == 'post' %}aria-current="page"{% endif %}
+            >Writing</a>
+            <a
+              href="{{ site.baseurl }}/about/"
+              {% if page.url == '/about/' %}aria-current="page"{% endif %}
+            >About</a>
+            <a class="lf-nav__optional" href="{{ site.github_url }}">GitHub</a>
+          </nav>
+          <button class="lf-theme-toggle" data-lineframe-theme-toggle type="button">
+            <span class="lf-theme-toggle__mark" aria-hidden="true"></span>
+            <span class="lf-theme-toggle__label" data-lineframe-theme-label>Dark</span>
+          </button>
+        </div>
       </div>
     </header>
 

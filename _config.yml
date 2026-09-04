@@ -50,10 +50,11 @@ url: https://shanmukh98.github.io/
 baseurl: ""
 
 # Lineframe UI
-theme_mode: light
+theme_mode: auto
 accent: "#526f7d"
-lineframe_css: "https://cdn.jsdelivr.net/gh/shanmukh98/lineframe-ui@v0.2.0/lineframe.css"
-lineframe_toc_js: "https://cdn.jsdelivr.net/gh/shanmukh98/lineframe-ui@v0.2.0/lineframe-toc.js"
+lineframe_css: "https://cdn.jsdelivr.net/gh/shanmukh98/lineframe-ui@v0.3.0/lineframe.css"
+lineframe_toc_js: "https://cdn.jsdelivr.net/gh/shanmukh98/lineframe-ui@v0.3.0/lineframe-toc.js"
+lineframe_theme_js: "https://cdn.jsdelivr.net/gh/shanmukh98/lineframe-ui@v0.3.0/lineframe-theme.js"
 github_url: "https://github.com/shanmukh98"
 
 #
