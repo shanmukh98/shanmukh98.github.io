@@ -6,7 +6,7 @@
 name: Shanmukh Alle
 
 # Short bio or description (displayed in the header)
-description: A Machine learning enthusiast who is also intrested in Computer Architectures and photography
+description: Notes on machine learning, computer architecture, photography, and hands-on experiments.
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
@@ -48,6 +48,12 @@ url: https://shanmukh98.github.io/
 # and NOT your User repository (http://yourusername.github.io)
 # then add in the baseurl here, like this: "/repository-name"
 baseurl: ""
+
+# Lineframe UI
+theme_mode: light
+accent: "#526f7d"
+lineframe_css: "https://cdn.jsdelivr.net/gh/shanmukh98/lineframe-ui@v0.1.0/lineframe.css"
+github_url: "https://github.com/shanmukh98"
 
 #
 # !! You don't need to change any of the configuration flags below !!

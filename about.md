@@ -2,14 +2,13 @@
 layout: page
 title: About
 permalink: /about/
+accent: "#6b7665"
 ---
 
-Some information about you!
+I am interested in machine learning, computer architecture, photography, and
+the practical details behind how systems work.
 
-### More Information
+This site is where I document experiments, lessons, and small projects that are
+useful enough to revisit or share.
 
-A place to include any other types of information that you'd like to include about yourself.
-
-### Contact me
-
-[email@domain.com](mailto:email@domain.com)
+You can find my work on [GitHub](https://github.com/shanmukh98).

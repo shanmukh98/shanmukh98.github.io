@@ -2,15 +2,35 @@
 layout: default
 ---
 
-<article class="post">
-  <h1>{{ page.title }}</h1>
+<article class="lf-article">
+  <header class="lf-article__header">
+    <div>
+      <a class="lf-section__label article-back-link" href="{{ site.baseurl }}/">All writing</a>
+    </div>
+    <div>
+      <p class="lf-kicker">Field notes</p>
+      <h1 class="lf-article__title">{{ page.title }}</h1>
+      {% if page.description %}
+        <p class="lf-article__description">{{ page.description }}</p>
+      {% endif %}
+      <div class="lf-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+        <span>{{ site.name }}</span>
+      </div>
+      {% if page.tags %}
+        <div class="article-tags">
+          {% for tag in page.tags %}
+            <span class="lf-tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </header>
 
-  <div class="entry">
-    {{ content }}
-  </div>
-
-  <div class="date">
-    Written on {{ page.date | date: "%B %e, %Y" }}
+  <div class="lf-article__body">
+    <div class="lf-prose">
+      {{ content }}
+    </div>
   </div>
 
   {% include disqus.html %}

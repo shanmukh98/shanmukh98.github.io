@@ -1,50 +1,64 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" data-theme="{{ site.theme_mode | default: 'light' }}">
   <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.name }}</title>
 
     {% include meta.html %}
-
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
-
-    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+    <meta name="theme-color" content="#f4f3ee">
+    <link rel="icon" href="{{ site.baseurl }}/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="{{ site.lineframe_css }}">
+    <link rel="stylesheet" href="{{ site.baseurl }}/style.css">
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="{{ site.name }} - {{ site.description }}"
+      href="{{ site.baseurl }}/feed.xml"
+    >
   </head>
 
-  <body>
-    <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
-
-          <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
-          </div>
-
-          <nav>
-            <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/about">About</a>
-          </nav>
-        </header>
+  <body
+    class="lf-site"
+    style="--lf-accent: {{ page.accent | default: site.accent | default: '#526f7d' }};"
+  >
+    <header class="lf-header">
+      <div class="lf-header__inner">
+        <a class="lf-brand" href="{{ site.baseurl }}/">
+          <span class="lf-brand__mark" aria-hidden="true"></span>
+          {{ site.name }}
+        </a>
+        <nav class="lf-nav" aria-label="Primary navigation">
+          <a
+            href="{{ site.baseurl }}/"
+            {% if page.url == '/' or page.layout == 'post' %}aria-current="page"{% endif %}
+          >Writing</a>
+          <a
+            href="{{ site.baseurl }}/about/"
+            {% if page.url == '/about/' %}aria-current="page"{% endif %}
+          >About</a>
+          <a class="lf-nav__optional" href="{{ site.github_url }}">GitHub</a>
+        </nav>
       </div>
-    </div>
+    </header>
 
-    <div id="main" role="main" class="container">
+    <main id="content" class="site-main">
       {{ content }}
-    </div>
+    </main>
 
-    <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-          {% include svg-icons.html %}
-        </footer>
+    <footer class="lf-footer">
+      <div class="lf-footer__inner">
+        <span>&copy; {{ site.time | date: '%Y' }} {{ site.name }}</span>
+        <div class="lf-footer__links">
+          <a href="{{ site.baseurl }}/feed.xml">RSS</a>
+          <a href="{{ site.github_url }}">GitHub</a>
+        </div>
       </div>
-    </div>
+    </footer>
 
     {% include analytics.html %}
   </body>

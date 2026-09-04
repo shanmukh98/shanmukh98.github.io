@@ -1,18 +1,52 @@
 ---
 layout: default
+accent: "#526f7d"
 ---
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
+<div class="lf-shell">
+  <div class="lf-frame">
+    <section class="lf-hero">
+      <div class="lf-hero__label">Notes and experiments</div>
+      <div>
+        <p class="lf-kicker">Learning in public</p>
+        <h1 class="lf-display">Ideas become clearer when I write them down.</h1>
+        <p class="lf-lead">{{ site.description }}</p>
+        <div class="lf-actions">
+          <a class="lf-button lf-button--solid" href="{{ site.baseurl }}/about/">About me</a>
+          <a class="lf-button" href="{{ site.github_url }}">View GitHub</a>
+        </div>
       </div>
+    </section>
 
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
+    <div class="lf-strip">
+      <span>Writing about things I build, test, and learn</span>
+    </div>
+
+    <section class="lf-section">
+      <div class="lf-section__rail">
+        <span class="lf-section__label">Archive</span>
+        <h2 class="lf-section__title">Writing</h2>
+      </div>
+      <div class="lf-section__body">
+        <ol class="lf-post-list">
+          {% for post in site.posts %}
+            <li class="lf-post-list__item">
+              <a class="lf-post-link" href="{{ site.baseurl }}{{ post.url }}">
+                <span class="lf-post-link__index">{{ forloop.index }}</span>
+                <span>
+                  <span class="lf-post-link__title">{{ post.title }}</span>
+                  <span class="lf-post-link__summary">
+                    {{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 180 }}
+                  </span>
+                </span>
+                <time class="lf-post-link__date" datetime="{{ post.date | date_to_xmlschema }}">
+                  {{ post.date | date: "%Y.%m.%d" }}
+                </time>
+              </a>
+            </li>
+          {% endfor %}
+        </ol>
+      </div>
+    </section>
+  </div>
 </div>

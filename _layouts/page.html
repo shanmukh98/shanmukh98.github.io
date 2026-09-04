@@ -2,11 +2,16 @@
 layout: default
 ---
 
-<article class="page">
-
-  <h1>{{ page.title }}</h1>
-
-  <div class="entry">
-    {{ content }}
+<article class="lf-shell">
+  <div class="lf-frame lf-page">
+    <header class="lf-page__header">
+      <p class="lf-kicker">Page</p>
+      <h1 class="lf-page__title">{{ page.title }}</h1>
+    </header>
+    <div class="lf-article__body">
+      <div class="lf-prose">
+        {{ content }}
+      </div>
+    </div>
   </div>
 </article>
