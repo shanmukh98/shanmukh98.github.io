@@ -5,6 +5,12 @@
   min-height: calc(100vh - 9.25rem);
 }
 
+.site-brand-mark {
+  width: 1.45rem;
+  height: 1.45rem;
+  flex: 0 0 auto;
+}
+
 .article-back-link {
   color: var(--lf-faint);
   text-decoration: none;
