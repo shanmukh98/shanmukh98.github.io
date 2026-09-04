@@ -28,10 +28,22 @@ layout: default
   </header>
 
   <div class="lf-article__body">
-    <div class="lf-prose">
-      {{ content }}
+    <div class="lf-article__content lf-article__content--single" data-lineframe-article>
+      <nav class="lf-toc" data-lineframe-toc aria-label="On this page" hidden>
+        <p class="lf-toc__title">On this page</p>
+        <button class="lf-toc__toggle" type="button" aria-expanded="false">
+          <span>On this page</span>
+          <span class="lf-toc__toggle-mark" aria-hidden="true">+</span>
+        </button>
+        <ol class="lf-toc__list" data-lineframe-toc-list></ol>
+      </nav>
+      <div class="lf-prose" data-lineframe-prose>
+        {{ content }}
+      </div>
     </div>
   </div>
 
   {% include disqus.html %}
 </article>
+
+<script src="{{ site.lineframe_toc_js }}" defer></script>

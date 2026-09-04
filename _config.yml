@@ -52,7 +52,8 @@ baseurl: ""
 # Lineframe UI
 theme_mode: light
 accent: "#526f7d"
-lineframe_css: "https://cdn.jsdelivr.net/gh/shanmukh98/lineframe-ui@v0.1.0/lineframe.css"
+lineframe_css: "https://cdn.jsdelivr.net/gh/shanmukh98/lineframe-ui@v0.2.0/lineframe.css"
+lineframe_toc_js: "https://cdn.jsdelivr.net/gh/shanmukh98/lineframe-ui@v0.2.0/lineframe-toc.js"
 github_url: "https://github.com/shanmukh98"
 
 #
