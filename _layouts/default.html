@@ -25,7 +25,7 @@
 
   <body
     class="lf-site"
-    style="--lf-accent: {{ page.accent | default: site.accent | default: '#526f7d' }};"
+    data-lineframe-accent="{{ page.accent | default: site.accent | default: 'slate' | escape }}"
   >
     <header class="lf-header">
       <div class="lf-header__inner">

@@ -2,7 +2,7 @@
 layout: post
 title: My Experience Optimizing My TV with GitHub Copilot CLI
 description: A reversible Android TV cleanup using wireless ADB, small test batches, and Projectivy Launcher.
-accent: "#65728f"
+accent: violet
 tags:
   - android-tv
   - adb

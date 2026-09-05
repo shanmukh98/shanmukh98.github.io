@@ -1,3 +1,24 @@
+## Site design and page accents
+
+This site uses [Lineframe UI](https://github.com/shanmukh98/lineframe-ui).
+Its palette definitions live in one shared module:
+[`lineframe-accents.css`](https://github.com/shanmukh98/lineframe-ui/blob/main/lineframe-accents.css).
+Each palette has separate `--lf-accent-light` and `--lf-accent-dark` values;
+the selected theme automatically chooses between them.
+
+Set `accent: slate` in `_config.yml` for the site default, or select `slate`,
+`violet`, `moss`, or `clay` in a page's front matter:
+
+```yaml
+accent: violet
+```
+
+To adjust or add a palette, edit the shared module in the UI library, publish a
+new library tag, and update the three pinned Lineframe URLs in `_config.yml`.
+Do not repeat color values in individual pages or set a theme on their bodies.
+
+The original Jekyll Now setup documentation follows.
+
 > March, 2016: If you're on an old version of Jekyll Now and run into a) build warnings or b) syntax highlighting issues caused by [Jekyll 3 and GitHub Pages updates](https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0), just :sparkles:[update your _config.yml](https://github.com/barryclark/jekyll-now/pull/445/files):sparkles: and you'll be set!
 
 # Jekyll Now

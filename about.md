@@ -2,7 +2,7 @@
 layout: page
 title: About
 permalink: /about/
-accent: "#6b7665"
+accent: moss
 ---
 
 I am interested in machine learning, computer architecture, photography, and
